@@ -45,7 +45,7 @@ exports.up = function(knex, Promise) {
       table.increments('id').primary();
       table.string('tag', 63)
     })
-    .createTableIfNotExists('reourse_tags', (table) => {
+    .createTableIfNotExists('resource_tags', (table) => {
       table.integer('resource_id');
       table.foreign('resource_id').references('resources.id');
       table.integer('tag_id');
@@ -61,9 +61,9 @@ exports.down = function(knex, Promise) {
     .dropTableIfExists('ratings')
     .dropTableIfExists('likes')
     .dropTableIfExists('comments')
-    .dropTableIfExists('reourse_tags')
+    .dropTableIfExists('resource_tags')
     .dropTableIfExists('tags')
     .dropTableIfExists('resources')
     .dropTableIfExists('users')
-  ]);
+  ])
 };
