@@ -3,45 +3,75 @@
 <head>
     <!-- Meta Information -->
     <title>Walr.us</title>
-    <!-- External CSS -->
-    <link rel="stylesheet" href="/styles/layout.scss" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,700,700i" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-<!--     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" /> -->
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-<!--     <link rel="stylesheet" href="/styles/font-awesome.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/tweet-area.css" type="text/css" /> -->
-    <!-- External JS -->
-    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/app.js"></script>
+    <link rel="stylesheet" href="/styles/navbar.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/asset.css" type="text/css" />
+
  </head>
 
 <body>
-    <!-- Top nav bar (fixed) -->
-    <nav class="nav-bar">
-        <img class="logo" src="/images/walrus.png">
-        <span class="header">walr.us</span>
-        <input type="text" name="search" placeholder="Search..">
-        <button class="compose" type='button'><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Search
-        </button>
-    </nav>
-    <!-- Page-specific (main) <content></content>tent here -->
-    <main class="container">
-        <section class="new-post">
-            <h2 class="headline">Submit Resource</h2>
-            <form class="postarea" method="POST" action="/posts/"> <!--/posts form handler not yet defined/  -->
-                <textarea class="postbox" name="text" placeholder="Learning Resource"></textarea><br>
-                Title: <input class="title" type="text" name="Title">
-                Description: <input class="description" type="text" name="Description"><br>
-                <input class="submit" type="submit" value="post">  
-            </form>
-        </section>
-        <section class="assets-area">
-        </section>
-    </main>
+  <!-- Top nav bar (fixed) -->
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo"><img src="/images/walrus.png" alt="walrus"/></a>
+      <form>
+        <div class="input-field">
+          <input id="search" type="search" required>
+          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+          <i class="material-icons">close</i>
+        </div>
+        <ul class="right hide-on-med-and-down">
+          <div class="fb-login-button btn" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="true"></div>
+          <li><a class="waves-effect waves-light btn">Button</a></li>
+          <li><a class="waves-effect waves-light btn">Button <i class="material-icons right">cloud</i></a></li>
+        </ul>
+      </form>
+    </div>
+    <!-- <img class="logo" src="/images/walrus.png">
+    <span class="header">walr.us</span>
+    <input type="text" name="search" placeholder="Search..">
+    <button class="compose" type='button'><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Search
+    </button> -->
+  </nav>
+  <!-- Page-specific (main) <content></content> here -->
+  <div class="container">
+    <div class="row new-post">
+      <div class="col s6">
+        <h3 class="headline">Submit Resource</h3>
+        <form class="postarea" method="POST" action="/posts/"> <!--/posts form handler not yet defined/  -->
+            <textarea class="postbox" name="text" placeholder="Learning Resource"></textarea><br>
+            Title: <input class="title" type="text" name="Title">
+            Description: <input class="description" type="text" name="Description"><br>
+            <input class="submit" type="submit" value="post">
+        </form>
+      </div>
+    </div>
+    <div class="row section assets-area">
+      <div class="col s6 asset">
+        <img class="responsive-img" src="/images/corgi.jpg" alt="corgi" />
+        <p>
+          Corgi
+        </p>
+      </div>
+      <div class="col s6 asset">
+        <img class="responsive-img" src="/images/corgi.jpg" alt="corgi" />
+        <p>
+          Corgi
+        </p>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+  <script type="text/javascript" src="/scripts/app.js"></script>
+  <script type="text/javascript" src="/scripts/fb.js"></script>
 </body>
 </html>
