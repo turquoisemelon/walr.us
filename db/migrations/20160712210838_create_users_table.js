@@ -11,7 +11,7 @@ exports.up = function(knex, Promise) {
       table.string('title');
       table.text('description');
       table.string('img_path');
-      table.integer('ratings_count');
+      table.float('ratings_avg', 2, 1);
       table.integer('likes_count');
       table.integer('comments_count');
     })
@@ -26,6 +26,7 @@ exports.up = function(knex, Promise) {
       table.foreign('user_id').references('users.fb_id');
       table.integer('resource_id');
       table.foreign('resource_id').references('resources.id');
+      table.integer('rating');
     })
     .createTableIfNotExists('likes', (table) => {
       table.bigInteger('user_id');
@@ -55,12 +56,13 @@ exports.up = function(knex, Promise) {
 
 exports.down = function(knex, Promise) {
   return Promise.all([
-    knex.schema.dropTableIfExists('follow')
+    knex.schema
+    .dropTableIfExists('follow')
     .dropTableIfExists('ratings')
     .dropTableIfExists('likes')
     .dropTableIfExists('comments')
-    .dropTableIfExists('tags')
     .dropTableIfExists('reourse_tags')
+    .dropTableIfExists('tags')
     .dropTableIfExists('resources')
     .dropTableIfExists('users')
   ]);
