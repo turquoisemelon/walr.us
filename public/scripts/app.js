@@ -1,12 +1,12 @@
 $(() => {
   $.ajax({
     method: "GET",
-    url: "/api/users"
+    url: "/api/resource"
   }).done((users) => {
     for(user of users) {
-      $("<div>").text(user.name).appendTo($("body"));
+      $("<div>").text(user.fb_id).appendTo($("body"));
     }
-  });;
+  });
 });
 
 $(document).ready(function() {
