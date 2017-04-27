@@ -1,55 +1,67 @@
-$(() => {
-  $.ajax({
-    method: "GET",
-    url: "/api/resource"
-  }).done((users) => {
-    for(user of users) {
-      $("<div>").text(user.fb_id).appendTo($("body"));
-    }
-  });
-});
-
 $(document).ready(function() {
-  function createTweetElement(tweet) {
-    let $tweet =
-      `<article class="tweet-container">
-                <header class="user"><img src="${tweet.user.avatars.small}">
-                    <h2 class="name"> ${tweet.user.name}</h2>
-                    <span class="handle"> ${tweet.user.handle} </span>
-                </header>
-                <section class="content">
-                    <p class="message" >${tweet.content.text}</p>
-                </section>
-                <span class="tweet-footer">
-                    <span class="created_at">${timeSince(tweet.created_at)}</span>
-                    <i class="fa fa-flag" aria-hidden="true"></i>
-                    <i class="fa fa-retweet" aria-hidden="true"></i>
-                    <i class="fa fa-heart" aria-hidden="true"></i>
-                </span>
-            </article>`
-    return $tweet;
-  }
+
+  $(() => {
+    $.ajax({
+      method: "GET",
+      url: "/api/resource"
+    }).done((users) => {
+      for(user of users) {
+        $("<div>").text(user.fb_id).appendTo($("body"));
+      }
+    });
+  });
+
+//initalizing FB javascript SDK
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '798380160331558',
+      xfbml      : true,
+      version    : 'v2.9'
+  });
+
+  FB.Event.subscribe('auth.statusChange', function(response) {
+    FB.getLoginStatus(function(response) {
+        if (response.status === 'connected') {
+          console.log(response);
+        } else if (response.status === 'not_authorized') {
+          console.log("not_authorized");
+        } else {
+          // not_logged_in
+          console.log('not connected');
+        }
+    });
+  // do something with response
+    console.log('something changed with status');
+  });
+
+  };
 
 
-$(window).ready(function() {
-    var comment_callback = function(response) {
-        console.log("comment_callback");
-        console.log(response);
-    }
-    FB.Event.subscribe('comment.create', comment_callback);
-    FB.Event.subscribe('comment.remove', comment_callback);
-});
+  (function(d, s, id){
+   var js, fjs = d.getElementsByTagName(s)[0];
+   if (d.getElementById(id)) {return;}
+   js = d.createElement(s); js.id = id;
+   js.src = "//connect.facebook.net/en_US/sdk.js";
+   fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
 
-FB.login(function(response) {
-  if (response.status === 'connected') {
-    console.log("yes")
-    // Logged into your app and Facebook.
-  } else {
-    // The person is not logged into this app or we are unable to tell.
-  }
-});
+  // function createTweetElement(tweet) {
+  //   let $tweet =
+  //     `<article class="tweet-container">
+  //               <header class="user"><img src="${tweet.user.avatars.small}">
+  //                   <h2 class="name"> ${tweet.user.name}</h2>
+  //                   <span class="handle"> ${tweet.user.handle} </span>
+  //               </header>
+  //               <section class="content">
+  //                   <p class="message" >${tweet.content.text}</p>
+  //               </section>
+  //               <span class="tweet-footer">
+  //                   <span class="created_at">${timeSince(tweet.created_at)}</span>
+  //                   <i class="fa fa-flag" aria-hidden="true"></i>
+  //                   <i class="fa fa-retweet" aria-hidden="true"></i>
+  //                   <i class="fa fa-heart" aria-hidden="true"></i>
+  //               </span>
+  //           </article>`
+  //   return $tweet;
+})
 
-FB.getLoginStatus(function(response) {
-    statusChangeCallback(response); console.log("Logged in");
-    //If the person is logged into Facebook and your app, redirect them to your app's logged in experience.
-});
