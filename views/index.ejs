@@ -29,8 +29,6 @@
         </div>
         <ul class="right hide-on-med-and-down">
           <div class="fb-login-button btn" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="true"></div>
-          <li><a class="waves-effect waves-light btn">Button</a></li>
-          <li><a class="waves-effect waves-light btn">Button <i class="material-icons right">cloud</i></a></li>
         </ul>
       </form>
     </div>
@@ -43,7 +41,10 @@
   <!-- Page-specific (main) <content></content> here -->
   <div class="container">
     <div class="row new-post">
-      <div class="col s6">
+      <div class="col s3">
+
+      </div>
+      <div class="col s6 center-align">
         <h3 class="headline">Submit Resource</h3>
         <form class="postarea" method="POST" action="/posts/"> <!--/posts form handler not yet defined/  -->
             <textarea class="postbox" name="text" placeholder="Learning Resource"></textarea><br>
@@ -51,6 +52,9 @@
             Description: <input class="description" type="text" name="Description"><br>
             <input class="submit" type="submit" value="post">
         </form>
+      </div>
+      <div class="col s3">
+
       </div>
     </div>
     <div class="row section assets-area">
