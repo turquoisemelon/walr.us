@@ -2,15 +2,14 @@
 
 const express = require('express');
 const router  = express.Router();
+const bd = require('../lib/util/data-helpers.js');
 
 module.exports = (knex) => {
 
   router.get("/", (req, res) => {
-    knex
-      .select("*")
-      .from("users")
-      .then((results) => {
-        res.json(results);
+    bd.test(knex)
+    .then((results)=>{
+      res.json(results)
     });
   });
 
