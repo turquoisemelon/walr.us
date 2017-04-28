@@ -35,26 +35,26 @@ exports.seed = function(knex, Promise) {
       {leader_id: 3, follower_id: 2}
     ])
   })
-  .then(() => {
-    return knex('likes').insert([
-      {user_id: 1, resource_id: 3},
-      {user_id: 1, resource_id: 1},
-      {user_id: 1, resource_id: 2},
-      {user_id: 2, resource_id: 3},
-      {user_id: 2, resource_id: 1},
-      {user_id: 3, resource_id: 3}
-    ])
-  })
   // .then(() => {
-  //   return knex('ratings').insert([
-  //     {user_id: 1, resource_id: 3, rating: 5},
-  //     {user_id: 1, resource_id: 2, rating: 5},
-  //     {user_id: 1, resource_id: 1, rating: 4},
-  //     {user_id: 2, resource_id: 2, rating: 4},
-  //     {user_id: 2, resource_id: 1, rating: 2},
-  //     {user_id: 3, resource_id: 2, rating: 1}
+  //   return knex('likes').insert([
+  //     {user_id: 1, resource_id: 3},
+  //     {user_id: 1, resource_id: 1},
+  //     {user_id: 1, resource_id: 2},
+  //     {user_id: 2, resource_id: 3},
+  //     {user_id: 2, resource_id: 1},
+  //     {user_id: 3, resource_id: 3}
   //   ])
   // })
+  .then(() => {
+    return knex('ratings').insert([
+      {user_id: 1, resource_id: 3, rating: 5},
+      {user_id: 1, resource_id: 2, rating: 5},
+      {user_id: 1, resource_id: 1, rating: 4},
+      {user_id: 2, resource_id: 2, rating: 4},
+      {user_id: 2, resource_id: 1, rating: 2},
+      {user_id: 3, resource_id: 2, rating: 1}
+    ])
+  })
   // .then(() => {
   //   return knex('comments').insert([
   //     {user_id: 1, resource_id: 1, body: "This is all Fake News!!!!"},
