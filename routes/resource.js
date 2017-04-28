@@ -1,20 +1,15 @@
 "use strict";
 
-const screenShot = require("../lib/util/screenshotrequest");
-
 const express = require('express');
 const router  = express.Router();
+const db = require('../lib/util/data-helpers.js');
 
 module.exports = (knex) => {
 
-  // localhost:8080/api/resource/
   router.get("/", (req, res) => {
-    // data helper will come here
-    knex
-      .select("*")
-      .from("users")
-      .then((results) => {
-        res.json(results);
+    db.test(knex)
+    .then((results)=>{
+      res.json(results)
     });
   });
 
