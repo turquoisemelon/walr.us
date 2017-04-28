@@ -1,5 +1,3 @@
-// var exports = module.exports = function() {
-
 window.fbAsyncInit = function() {
   FB.init({
     appId: '798380160331558',
@@ -14,7 +12,8 @@ window.fbAsyncInit = function() {
 (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) {
-    return; }
+    return;
+  }
   js = d.createElement(s);
   js.id = id;
   js.src = "http://connect.facebook.net/en_US/sdk.js";
@@ -39,23 +38,43 @@ function checkLoginState() {
   });
 }
 
-$(document).on(
-  'fbload',
-  function() {
+$(document).on('fbload', function() {
     FB.login(function(response) {
       if (response.status === 'connected') {
         console.log('Successful login123')
           // Logged into your app and Facebook.
       } else {
         console.log('No good')
-          // The person is not logged into this app or we are unable to tell. 
+          // The person is not logged into this app or we are unable to tell.
       }
     });
 
     FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
       console.log("Logged in234");
-      //If the person is logged into Facebook and your app, redirect them to your app's logged in experience. 
+      //If the person is logged into Facebook and your app, redirect them to your app's logged in experience.
     });
   });
-// }
+
+  $(window).ready(function() {
+      var comment_callback = function(response) {
+          console.log("comment_callback");
+          console.log(response);
+      }
+      FB.Event.subscribe('comment.create', comment_callback);
+      FB.Event.subscribe('comment.remove', comment_callback);
+  });
+
+  FB.login(function(response) {
+    if (response.status === 'connected') {
+      console.log("yes")
+      // Logged into your app and Facebook.
+    } else {
+      // The person is not logged into this app or we are unable to tell.
+    }
+  });
+
+  FB.getLoginStatus(function(response) {
+      statusChangeCallback(response); console.log("Logged in");
+      //If the person is logged into Facebook and your app, redirect them to your app's logged in experience.
+  });

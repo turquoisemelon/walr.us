@@ -1,17 +1,58 @@
-$(() => {
-  $.ajax({
-    method: "GET",
-    url: "/api/resource"
-  }).done((users) => {
-    for(user of users) {
-      $("<div>").text(user.fb_id).appendTo($("body"));
-    }
-  });
-});
+// $(() => {
+//   $.ajax({
+//     method: "GET",
+//     url: "/api/resource"
+//   }).done((users) => {
+//     for(user of users) {
+//       $("<div>").text(user.fb_id).appendTo($("body"));
+//     }
+//   });
+// });
 
-$(document).ready(function() {
-  function createTweetElement(tweet) {
-    let $tweet =
+function renderResources(resources) {
+  var $html = $('<div></div>');
+  resources.forEach((resource)=> {
+    var a = createResourceElement(resource);
+    $html.prepend(a);
+  })
+  $(".container").html($html);
+}
+
+function loadResources() {
+  $.ajax({
+    url: `/api/resource`,
+    method: 'GET',
+    dataType: "json"
+  }).done(renderResources(data))
+}
+
+
+function handleResourceSubmit(event) {
+  console.log('Button clicked, performing ajax call...');
+  event.preventDefault();
+  var formDataStr = $(this).serialize();
+  var textAreaContent = $('.postarea').val();
+
+  if(textAreaContent === '') {
+    return showNotificationBar('Please enter a text');
+  } else if (textAreaContent.length > 140) {
+    return showNotificationBar("Tweet is too long");
+  } else {
+    $.ajax({
+      url: '/api/resource',
+      method: 'POST',
+      data: formDataStr
+    }).done(function(data) {
+      $('.postarea').val('');
+      $('.counter').html(140);
+      loadResources();
+      console.log('the ajax request is successfull');
+    });
+  }
+}
+
+  function createResourceElement(resource) {
+    let $resource =
       `<article class="tweet-container">
                 <header class="user"><img src="${tweet.user.avatars.small}">
                     <h2 class="name"> ${tweet.user.name}</h2>
@@ -27,29 +68,5 @@ $(document).ready(function() {
                     <i class="fa fa-heart" aria-hidden="true"></i>
                 </span>
             </article>`
-    return $tweet;
+    return $resource;
   }
-
-
-$(window).ready(function() {
-    var comment_callback = function(response) {
-        console.log("comment_callback");
-        console.log(response);
-    }
-    FB.Event.subscribe('comment.create', comment_callback);
-    FB.Event.subscribe('comment.remove', comment_callback);
-});
-
-FB.login(function(response) {
-  if (response.status === 'connected') {
-    console.log("yes")
-    // Logged into your app and Facebook.
-  } else {
-    // The person is not logged into this app or we are unable to tell.
-  }
-});
-
-FB.getLoginStatus(function(response) {
-    statusChangeCallback(response); console.log("Logged in");
-    //If the person is logged into Facebook and your app, redirect them to your app's logged in experience.
-});
