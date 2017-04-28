@@ -11,6 +11,10 @@ module.exports = (knex) => {
     .then((results)=>{
       res.json(results)
     });
+
+    db.saveComment(1,2,'this shit is whack');
+    db.saveRating(1,2,5);
+    db.saveResource(1,)
   });
 
   return router;
