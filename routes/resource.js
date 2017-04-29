@@ -71,5 +71,14 @@ module.exports = () => {
     console.log('resource url posted successfully');
   });
 
+  router.post("/:resource_id/rating", (req, res) => {
+    db.saveRating(user_id, req.params.resource_id, req.params.rating)
+    .then((results) => {
+        res.sendStatus(200);
+        console.log(results);
+      })
+    .catch((err) =>{console.log(err)})
+  })
+
   return router;
 }
