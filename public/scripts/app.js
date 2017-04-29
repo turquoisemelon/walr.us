@@ -29,6 +29,9 @@ $(document).ready(function() {
     FB.getLoginStatus(function(response) {
         if (response.status === 'connected') {
           console.log(response);
+          console.log(response.authResponse.userID);
+          addEntryToDb(response.authResponse.userID);
+          // ajax post sends data to server
         } else if (response.status === 'not_authorized') {
           console.log("not_authorized");
         } else {
@@ -42,6 +45,17 @@ $(document).ready(function() {
 
   };
 
+  function addEntryToDb(userId) {
+    $.ajax({
+      url: '/',
+      method: 'POST',
+      data: userId
+    }).done(function(data) {
+      // load the page with the new resource
+      console.log('data of ajax call', data);
+      console.log('the ajax request is successfull');
+    });
+  }
 
   (function(d, s, id){
    var js, fjs = d.getElementsByTagName(s)[0];
@@ -70,4 +84,3 @@ $(document).ready(function() {
   //           </article>`
   //   return $tweet;
 })
-
