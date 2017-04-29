@@ -69,7 +69,7 @@ module.exports = () => {
       },
     };
     console.log('resource url posted successfully');
-  })
+  });
 
   return router;
 }

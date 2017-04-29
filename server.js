@@ -16,6 +16,7 @@ const morgan      = require('morgan');
 
 // Seperated Routes for each Resource
 const resourceRoutes = require("./routes/resource");
+const userRoutes = require("./routes/user");
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
 // 'dev' = Concise output colored by response status for development use.
@@ -35,9 +36,11 @@ app.use("/styles", sass({
 }));
 app.use(express.static("public"));
 
-// Mount all resource routes
+// Mount all routes
 app.use("/api/resource", resourceRoutes());
-
+console.log('inbetween the two routes in server.js');
+app.use("/user", userRoutes());
+console.log('afertin inserting userRoutes server.js');
 // Home page
 app.get("/", (req, res) => {
   res.render("index");
