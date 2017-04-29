@@ -46,7 +46,7 @@ module.exports = () => {
     // .then((results) => {});
   });
 
-  router.get("/resources", (req, res) => {
+  router.get("/resource", (req, res) => {
     db.getAllResources()
       .then((results) => {
           res.sendStatus(200);
@@ -55,7 +55,7 @@ module.exports = () => {
       .catch((err) => {console.log(err)})
   });
 
-  
+
   // return router;
 // }
 

@@ -37,10 +37,8 @@ app.use("/styles", sass({
 app.use(express.static("public"));
 
 // Mount all routes
-app.use("/api/resource", resourceRoutes());
 app.use("/user", userRoutes());
-app.get("/resources", resourceRoutes());
-console.log('after inserting userRoutes server.js');
+app.get("/resource", resourceRoutes());
 // Home page
 app.get("/", (req, res) => {
   res.render("index");

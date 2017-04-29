@@ -1,18 +1,5 @@
 $(document).ready(function() {
 
-
-//initalizing FB javascript SDK
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '798380160331558',
-      xfbml      : true,
-      version    : 'v2.9'
-  });
-
-  FB.Event.subscribe('auth.statusChange', function(response) {
-    FB.getLoginStatus(function(response) {
-        if (response.status === 'connected') {
-          // console.log(response);
   $(() => {
     $.ajax({
       method: "POST",
@@ -29,19 +16,28 @@ $(document).ready(function() {
       // }
     });
   });
-          // console.log(response.authResponse.userID);
-          // addEntryToDb(response.authResponse.userID);
-          // ajax post sends data to server
-        } else if (response.status === 'not_authorized') {
-          console.log("not_authorized");
-        } else {
-          // not_logged_in
-          console.log('not connected');
-        }
+
+//initalizing FB javascript SDK
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '798380160331558',
+      xfbml      : true,
+      version    : 'v2.9'
     });
-  // do something with response
-    console.log('something changed with status');
-  });
+
+    FB.getLoginStatus();
+
+    FB.Event.subscribe('auth.statusChange', function(response) {
+      FB.getLoginStatus(function(response) {
+          if (response.status === 'connected') {
+            console.log('something changed and now logged in');
+          } else if (response.status === 'not_authorized') {
+            console.log("something changed and now not_authorized");
+          } else {
+            console.log('something changed and now not connected');
+          }
+      });
+    });
 
   };
 
