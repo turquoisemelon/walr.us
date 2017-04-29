@@ -5,9 +5,9 @@ $(document).ready(function() {
       method: "GET",
       url: "/api/resource"
     }).done((response) => {
-      console.log(response[0].description);
-      // for(user of users) {
-      //   $("<div>").text(user.source_id).appendTo($("body"));
+      // console.log(response[0].a);
+      // for(tag of response) {
+      //   $("<div>").text(tag.a).appendTo($("body"));
       // }
     });
   });

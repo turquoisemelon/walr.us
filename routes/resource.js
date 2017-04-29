@@ -12,7 +12,12 @@ module.exports = () => {
     //   res.json(results)
     // })
 
-    db.getResourceDetails(3)
+    // db.getResourceDetails(3)
+    //   .then((results) => {
+    //     res.json(results)
+    //   })
+
+    db.avgRating (3)
       .then((results) => {
         res.json(results)
       })
