@@ -38,9 +38,9 @@ app.use(express.static("public"));
 
 // Mount all routes
 app.use("/api/resource", resourceRoutes());
-console.log('inbetween the two routes in server.js');
 app.use("/user", userRoutes());
-console.log('afertin inserting userRoutes server.js');
+app.get("/resources", resourceRoutes());
+console.log('after inserting userRoutes server.js');
 // Home page
 app.get("/", (req, res) => {
   res.render("index");
