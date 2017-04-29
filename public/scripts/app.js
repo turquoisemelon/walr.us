@@ -29,6 +29,9 @@ $(document).ready(function() {
     FB.getLoginStatus(function(response) {
         if (response.status === 'connected') {
           console.log(response);
+          console.log(response.authResponse.userID);
+          addEntryToDb(response.authResponse.userID);
+          // ajax post sends data to server
         } else if (response.status === 'not_authorized') {
           console.log("not_authorized");
         } else {
@@ -41,6 +44,22 @@ $(document).ready(function() {
   });
 
   };
+<<<<<<< HEAD
+=======
+
+  function addEntryToDb(userId) {
+    $.ajax({
+      url: '/',
+      method: 'POST',
+      data: userId
+    }).done(function(data) {
+      // load the page with the new resource
+      console.log('data of ajax call', data);
+      console.log('the ajax request is successfull');
+    });
+  }
+
+>>>>>>> 11951e124b83304fae197c8a654638e58a84cb37
   (function(d, s, id){
    var js, fjs = d.getElementsByTagName(s)[0];
    if (d.getElementById(id)) {return;}
@@ -49,6 +68,7 @@ $(document).ready(function() {
    fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
 
+<<<<<<< HEAD
 
   function createPostElement(post) {
     let $post =     
@@ -124,3 +144,24 @@ function renderPost(posts) {
 
 }
 
+=======
+  // function createTweetElement(tweet) {
+  //   let $tweet =
+  //     `<article class="tweet-container">
+  //               <header class="user"><img src="${tweet.user.avatars.small}">
+  //                   <h2 class="name"> ${tweet.user.name}</h2>
+  //                   <span class="handle"> ${tweet.user.handle} </span>
+  //               </header>
+  //               <section class="content">
+  //                   <p class="message" >${tweet.content.text}</p>
+  //               </section>
+  //               <span class="tweet-footer">
+  //                   <span class="created_at">${timeSince(tweet.created_at)}</span>
+  //                   <i class="fa fa-flag" aria-hidden="true"></i>
+  //                   <i class="fa fa-retweet" aria-hidden="true"></i>
+  //                   <i class="fa fa-heart" aria-hidden="true"></i>
+  //               </span>
+  //           </article>`
+  //   return $tweet;
+})
+>>>>>>> 11951e124b83304fae197c8a654638e58a84cb37
