@@ -20,7 +20,7 @@
 <body>
   <nav>
     <div class="nav-wrapper">
-      <a href="#!" class="brand-logo"><img src="/images/walrus.png" alt="walrus"/></a>
+      <a href="#!" class="brand-logo"><img src="/images/walrus8.png" alt="walrus"/></a>
       <form>
       <div class="fb-login-button btn" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="true"></div>
         <div class="input-field">
@@ -28,7 +28,6 @@
           <label class="label-icon" for="search"><i class="material-icons">search</i></label>
           <i class="material-icons">close</i>
         </div>
-
         <ul class="right hide-on-med-and-down">
         </ul>
 
@@ -49,9 +48,10 @@
         <h3 class="headline">Submit Resource</h3>
         <form class="postarea" method="POST" action="/posts/"> <!--/posts form handler not yet defined/  -->
             <textarea class="postbox" name="text" placeholder="Learning Resource"></textarea><br>
-            Title: <input class="title" type="text" name="Title">
-            Description: <input class="description" type="text" name="Description"><br>
-            <input class="submit" type="submit" value="post">
+            <div> Title: <input class="title" type="text" name="Title"></div>
+            <div> Description: <input class="description" type="text" name="Description"><br></div>
+            <div> Tags: <input class="tags" type="text" name="tags"><br></div>
+            <div><input class="submit" type="submit" value="post"></div>
         </form>
       </div>
       <div class="col s3">
