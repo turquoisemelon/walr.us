@@ -14,31 +14,29 @@ module.exports = (knex) => {
     });
   });
 
-  router.post("/", (req, res) => {
+  router.post("/api/resource", (req, res) => {
     if (!req.body.text) {
       res.status(400).json({ error: 'invalid request: no data in POST body'});
       return;
     }
-    const url = 'http://github.com';
+    const url = req.body.text;
     const viewport = '&viewport=1440x900';
     const fullpage = '&fullpage=1';
 
-    // const user = req.body.user ? req.body.user : userHelper.generateRandomUser();
-    // const tweet = {
-    //   user: user,
-    //   content: {
-    //     text: req.body.text
-    //   },
-    //   created_at: Date.now()
-    // };
+    const user = `userid coming from facebook`;
+    const resource = {
+      userID: user,
+      content: {
+        url: url,
+        title: req.body.Title,
+        description: req.body.Description,
+        img_path: getScreenShot.getScreenShot(url, viewport, fullpage, (path) => {
+                    console.log('path: ', path);
+                    return path;
+                  })
+      },
+    };
 
-    // getScreenShot.getScreenShot(url, viewport, fullpage, (path) => {
-    //   console.log('path: ', path);
-    //   return path;
-    // });
-    console.log(req.body);
-
-    //data helper function should come here and save the image to the database
     console.log('resource url posted successfully');
   })
 
