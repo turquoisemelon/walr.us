@@ -5,7 +5,12 @@ $(document).ready(function() {
       method: "GET",
       url: "/api/resource"
     }).done((response) => {
+      //these are the two ways we can access the data being returned by the routes
+      //either as a single roll of data with many fields response[0].x
+      //or as an array of objects for (x of response){...}
+
       // console.log(response[0].a);
+
       // for(tag of response) {
       //   $("<div>").text(tag.a).appendTo($("body"));
       // }
