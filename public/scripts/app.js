@@ -4,10 +4,11 @@ $(document).ready(function() {
     $.ajax({
       method: "GET",
       url: "/api/resource"
-    }).done((users) => {
-      for(user of users) {
-        $("<div>").text(user.fb_id).appendTo($("body"));
-      }
+    }).done((response) => {
+      console.log(response[0].description);
+      // for(user of users) {
+      //   $("<div>").text(user.source_id).appendTo($("body"));
+      // }
     });
   });
 
