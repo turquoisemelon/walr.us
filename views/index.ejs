@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="/styles/navbar.css" type="text/css" />
   <link rel="stylesheet" href="/styles/asset.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/new-asset.css" type="text/css" />
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
   <script type="text/javascript" src="/scripts/app.js"></script>
 </head>
@@ -24,7 +25,7 @@
       <a href="#!" class="brand-logo"><img src="/images/walrus8.png" alt="walrus"/></a>
      <ul class="right hide-on-med-and-down">
        <li><a class="waves-effect waves-light btn">Add Resource</a></li>
-       <li><a class="waves-effect waves-light btn"><div class="fb-login-button btn" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="true"></div></a></li>
+       <li><div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="true"></div></li>
      </ul>
     </div>
     <!-- <img class="logo" src="/images/walrus.png">
@@ -36,18 +37,41 @@
   <!-- Page-specific (main) <content></content> here -->
   <div class="container">
     <div class="row new-post">
-      <div class="col s3">
+      <div class="col s4">
       </div>
-      <div class="col s6 center-align">
+
+    <div class="row">
+      <form class="col s6">
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="input_text" type="text" data-length="50">
+            <label for="input_text">Resource Link</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="input_text" type="text" data-length="30">
+            <label for="input_text">Title</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <textarea id="textarea1" class="materialize-textarea" data-length="120"></textarea>
+            <label for="textarea1">Description</label>
+          </div>
+        </div>
+      </form>
+    </div>
+      <!-- <div class="col s6 center-align">
         <h3 class="headline">Submit Resource</h3>
-        <form class="postarea" method="POST" action="/posts/"> <!--/posts form handler not yet defined/  -->
+        <form class="postarea" method="POST" action="/posts/">
             <textarea class="postbox" name="text" placeholder="Learning Resource"></textarea><br>
             <div> Title: <input class="title" type="text" name="Title"></div>
             <div> Description: <input class="description" type="text" name="Description"><br></div>
             <div> Tags: <input class="tags" type="text" name="tags"><br></div>
             <div><input class="submit" type="submit" value="post"></div>
         </form>
-      </div>
+      </div> -->
     </div>
     <div class="row section assets-area">
       <article>
@@ -57,19 +81,25 @@
               <img class="activator" src="images/IzbVKV.jpg">
             </div>
             <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-              <p><a href="#">This is a link</a></p>
-              <span class="post-footer">
-                <div class="fb-comments" data-href="http://walr.us/1" data-width="320px" data-numposts="5"></div>
-                <span class="c-rating" id="counter0"></span>
-                <div class="fb-like" data-href="http://walr.us/1" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
-              </span>
+              <span class="card-title activator grey-text text-darken-4">Free Code Camp<i class="material-icons right">more_vert</i></span>
+              <p><a href="#">www.freecodecamp.com</a></p>
             </div>
-
+            <div class="card-action">
+                <a href="#"><i class="small material-icons">thumb_up</i></a>
+                <a href="#"><i class="small material-icons">comment</i></a>
+                <a href="#"><i class="small material-icons">grade</i></a>
+            </div>
             <div class="card-reveal">
               <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
               <p>Here is some more information about this product that is only revealed once clicked on.</p>
             </div>
+          </div>
+          <div class="fb-comments-section">
+            <span class="post-footer">
+              <div class="fb-comments" data-href="http://walr.us/1" data-width="320px" data-numposts="5"></div>
+              <span class="c-rating" id="counter0"></span>
+              <div class="fb-like" data-href="http://walr.us/1" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
+            </span>
           </div>
         </div>
       </article>
@@ -80,8 +110,13 @@
               <img class="activator" src="images/kMqfmJ.jpg">
             </div>
             <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-              <p><a href="#">This is a link</a></p>
+              <span class="card-title activator grey-text text-darken-4">Code Academy<i class="material-icons right">more_vert</i></span>
+              <p><a href="#">www.codeacademy.com</a></p>
+            </div>
+            <div class="card-action">
+                <a href="#"><i class="small material-icons">thumb_up</i></a>
+                <a href="#"><i class="small material-icons">comment</i></a>
+                <a href="#"><i class="small material-icons">grade</i></a>
             </div>
             <div class="card-reveal">
               <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
@@ -89,25 +124,6 @@
             </div>
           </div>
         </div>
-        <!-- <div class="col s4 asset">
-          <header class="title">
-              <p class="name"> Meltem</p>
-              <span class="tag"> Programming </span>
-          </header>
-          <section class="content">
-              <div class="image">
-                  <img class="responsive-img" src="images/kMqfmJ.jpg" alt="" />
-                  <h3 class="truncate"><span>Title of Resource:<span class='spacer'></span><br/><span class='spacer'></span>Description</span>
-                  </h3>
-              </div>
-          </section>
-
-          <span class="post-footer">
-            <div class="fb-comments" data-href="http://walr.us/1" data-width="320px" data-numposts="5"></div>
-            <span class="c-rating" id="counter0"></span>
-            <div class="fb-like" data-href="http://walr.us/1" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
-          </span>
-        </div> -->
       </article>
       <article>
         <div class="col s4 asset">
@@ -116,8 +132,13 @@
               <img class="activator" src="images/ZTKprt.jpg">
             </div>
             <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-              <p><a href="#">This is a link</a></p>
+              <span class="card-title activator grey-text text-darken-4">Pluralsight<i class="material-icons right">more_vert</i></span>
+              <p><a href="#">www.pluralsight.com</a></p>
+            </div>
+            <div class="card-action">
+                <a href="#"><i class="small material-icons">thumb_up</i></a>
+                <a href="#"><i class="small material-icons">comment</i></a>
+                <a href="#"><i class="small material-icons">grade</i></a>
             </div>
             <div class="card-reveal">
               <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
@@ -125,26 +146,6 @@
             </div>
           </div>
         </div>
-
-        <!-- <div class="col s4 asset">
-          <header class="title">
-              <p class="name"> Meltem</p>
-              <span class="tag"> Programming </span>
-          </header>
-          <section class="content">
-              <div class="image">
-                  <img class="responsive-img" src="images/ZTKprt.jpg" alt="" />
-                  <h3 class="truncate"><span>Title of Resource:<span class='spacer'></span><br/><span class='spacer'></span>Description</span>
-                  </h3>
-              </div>
-          </section>
-
-          <span class="post-footer">
-            <div class="fb-comments" data-href="http://walr.us/1" data-width="320px" data-numposts="5"></div>
-            <span class="c-rating" id="counter0"></span>
-            <div class="fb-like" data-href="http://walr.us/1" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
-          </span>
-        </div> -->
       </article>
     </div>
   </div>
