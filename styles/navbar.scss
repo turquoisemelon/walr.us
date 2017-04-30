@@ -1,10 +1,16 @@
 nav {
-  background-color: #5262bb;
+  background-color: rgba(63, 81, 181, 0.47);
   .brand-logo img {
-    width: 4rem;
-    height: 4rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 1.5rem;
+    border-color: orange;
+    border-style: solid;
+    margin-left: 1rem;
+    margin-top: 0.3rem;
+    border-width: 0.15rem;
   }
   .btn {
-    background-color: #f37852;
+    background-color: rgb(255, 155, 0);
   }
 }
