@@ -2,6 +2,16 @@
   .responsive-img {
     width: 100%
   }
+  .card-action {
+    display: flex;
+    padding: 5px 24px;
+  }
+  .card.medium {
+    height: 450px;
+    .card-image {
+      max-height: 80%;
+    }
+  }
 }
 
 .container .row {
