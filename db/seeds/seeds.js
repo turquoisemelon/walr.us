@@ -11,21 +11,21 @@ exports.seed = function(knex, Promise) {
       url: 'http://www.cnn.com/',
       title: 'Fake News!!!',
       description: 'View the latest news and breaking news today for U.S., world, weather, entertainment, politics and health at CNN.com.',
-      img_path: '/public/img/001.jpg'
+      img_path: '/public/images/cBjrIP.jpg'
     },
     {
       user_id: 3,
       url: 'http://www.foodnetwork.ca/',
       title: 'Watch Food Network Videos | Full Episodes Online - Anna Olson, Top Chef',
       description: 'Food Network Canada Videos, watch your favorite Food TV shows online; watch Top Chef, Bake with Anna Olson online for free and all Food Network Canada Shows Online.',
-      img_path: '/public/img/002.jpg'
+      img_path: '/public/images/5Z9M9u.jpg'
     },
     {
       user_id: 1,
       url: 'http://www.astonmartin.com/',
       title: 'Aston Martin | The Official Website',
       description: 'Official website of Aston Martin Lagonda Ltd., luxury British sports car manufacturer. View the latest information, news, and pictures from Aston Martin on our models including Vanquish, Vantage and DB9.',
-      img_path: '/public/img/003.jpg'
+      img_path: '/public/images/zk24NI.jpg'
     }
     ])
   })

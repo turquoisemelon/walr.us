@@ -17,13 +17,13 @@ $(document).ready(function() {
                 event.preventDefault();
                 $.ajax({
                   method: "POST",
-                  url: `/user/resource/1/new`,
+                  url: `/user/resource/3/new`,
                   // ${FB.getAuthResponse().userID}
                   data: {
-                    url : 'https://developer.mozilla.org',
-                    title : "Mozilla Developer Network",
-                    description : "The Mozilla Developer Network (MDN) provides information about Open Web technologies including HTML, CSS, and APIs for both Web sites and HTML5 Apps. It also documents Mozilla products, like Firefox OS.",
-                    tags : ['blah', 'bleh', 'bluh']
+                    url : 'http://www.astonmartin.com/',
+                    title : "Watch Food Network Videos | Full Episodes Online - Anna Olson, Top Chef",
+                    description : "Food Network Canada Videos, watch your favorite Food TV shows online; watch Top Chef, Bake with Anna Olson online for free and all Food Network Canada Shows Online.",
+                    tags : ['news', 'responsive design']
                   }
                 }).done((response) => {
                   //these are the two ways we can access the data being returned by the routes
