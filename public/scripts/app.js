@@ -63,22 +63,22 @@ $(document).ready(function() {
   }(document, 'script', 'facebook-jssdk'));
 
 
-//   function createPostElement(post) {
-//     let $post =
-//     <article>
-//     <div class="col s4 asset">
-//         <article class="post-container">
-//             <header class="title">
-//                 <p class="name"> ${fb.user.name}</p> <!-- http:/graph.facebook.com/USERID/picture/ -->
-//                 <span class="tag"> ${post.tags} </span>
-//             </header>
-//             <section class="content">
-//                 <div class="image">
-//                     <img src="http://i.ebayimg.com/images/g/IUUAAOSwv2JXwNU2/s-l500.jpg" alt="" />
-//                     <h3 class="truncate"><span>Title of Resource:<span class='spacer'></span><br/><span class='spacer'></span>Description</span>
-//                     </h3>
-//                 </div>
-//             </section>
+  // function createPostElement(post) {
+  //   let $post =
+  //   <article>
+  //   <div class="col s4 asset">
+  //       <article class="post-container">
+  //           <header class="title">
+  //               <p class="name"> ${fb.user.name}</p> <!-- http:/graph.facebook.com/USERID/picture/ -->
+  //               <span class="tag"> ${post.tags} </span>
+  //           </header>
+  //           <section class="content">
+  //               <div class="image">
+  //                   <img src="http://i.ebayimg.com/images/g/IUUAAOSwv2JXwNU2/s-l500.jpg" alt="" />
+  //                   <h3 class="truncate"><span>Title of Resource:<span class='spacer'></span><br/><span class='spacer'></span>Description</span>
+  //                   </h3>
+  //               </div>
+  //           </section>
 
 //             <span class="post-footer">
 //     <div class="fb-comments" data-href="http://walr.us/1" data-width="320px" data-numposts="5"></div>

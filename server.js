@@ -38,7 +38,7 @@ app.use(express.static("public"));
 
 // Mount all routes
 app.use("/user", userRoutes());
-app.get("/resource", resourceRoutes());
+app.use("/resource", resourceRoutes());
 // Home page
 app.get("/", (req, res) => {
   res.render("index");

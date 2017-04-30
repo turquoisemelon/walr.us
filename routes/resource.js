@@ -7,53 +7,70 @@ const getScreenShot = require('../lib/util/getscreenshot');
 
 module.exports = () => {
 
-  router.get("/", (req, res) => {
+  router.get('/:tag', (req,res) =>{
+    db.getTagedResource(req.params.tag)
+        .then((results) => {console.log(results.rows)});
+      // .catch((err) =>{console.log(err)});
+    });
 
-    //as you can see there are more data-helpers than there are routes
-    //this means some routes will need to use more than one data helper to complete the task
-    //when doing so we should make sure to use promises to avoid async issues
+  router.get('/', (req,res) =>{
+    db.getRatedResources()
+      .then((results) => {console.log(results.rows)})
+      .catch((err) =>{console.log(err)});
+    });
 
-    // retrieving all the detailed response of a resouce given id
+    return router;
+}
 
-    // db.getResourceDetails(3)
-    //   .then((results) => {
-    //     res.json(results)
-    //   })
+//   router.get("/resource", (req, res) => {
+//     const obj = []
+//        db.getAllResources()
+//          .then((results) => {
+//              res.sendStatus(200);
+//              obj.push(results)
+//              let resourceID = [];
+//              for (let i = 0; i < results.length; i++) {
+//                resourceID = results[i]["id"];
+//                // results[i].rating = 
+//               db.avgRating(resourceID)
+//               .then((resulted) => {
+//                 results[i].rating = resulted[0]['a'];
+//                 cosole.log()
+//                 obj[results[i].rating] = obj;
+//                 // console.log(results[i].rating);
+//                //this needs to be a function here
+//                // let Averaged = "";  
+//                // for (let j = 0; j < resulted.length; j++) {
+//                //  results[i].rating = resulted[j]["a"];
+//                // }
+//               // console.log(Averaged)
+//              // results[i].rating = Averaged;
+//           // console.log(results);
+//               })
+//               console.log(obj);
+//              // .finally(results)
+//               }
+//       })
+// }
 
-    //example of how one would pull average rating of a resource
-    //by passing in resource_id
-    // db.avgRating (3)
-    //   .then((results) => {
-    //     res.json(results)
-    //   })
+//for each ID in results, find the corresponding results_id in ratings
+//then using jquery set the currentRating to the found avgRating by '#counter'id''
 
+// for (var i; var i < results.length; i++)
+// function findRating(){}
+//           function findRating(results, results[i][id], property) {
+//     for(var i = 0, len = myArray.length; i < len; i++) {
+//         if (myArray[i][property] === searchTerm) return i;
+//     }
+//     return -1;
+// }
+// findRating(arr, "stevie", "hello"); 
+          // console.log(results);
+//           for each (var rates in results.id)
+       
 
-    //examples of how to save data to the database
-    //it is crucial to include the promise otherwise nothing will happen
-
-    // db.newUser(123478123)
-    // .then((results) => {})
-
-
-    // db.saveRating(1,1,1)
-    // .then((results) => {console.log(results)})
-    // .catch((err) =>{console.log(err)});
-
-
-    // db.saveResource(1,2,'lates webpage'
-    //   ,'this is a website where all your dreams come true'
-    //   ,'/path_of_stuff/asdfasdf.jpg')
-    // .then((results) => {});
-  });
-
-  router.get("/resource", (req, res) => {
-    db.getAllResources()
-      .then((results) => {
-          res.sendStatus(200);
-          console.log(results);
-        })
-      .catch((err) => {console.log(err)})
-  });
+  //     .catch((err) => {console.log("this is very bad" + err)})
+  // });
 
 
   // return router;
@@ -84,5 +101,3 @@ module.exports = () => {
 //     console.log('resource url posted successfully');
 //   });
 
-  return router;
-}
