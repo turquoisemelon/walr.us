@@ -46,6 +46,12 @@ module.exports = () => {
     // .then((results) => {});
   });
 
+  router.post("/:resource_id/rating", (req,res) => {
+    db.saveRating(req.body.user_id, req.params.resource_id, req.body.rating)
+      .then((results) => {})
+      .catch((err) =>{console.log(err)});
+  });
+
   router.post("/api/resource", (req, res) => {
     if (!req.body.text) {
       res.status(400).json({ error: 'invalid request: no data in POST body'});
@@ -69,7 +75,7 @@ module.exports = () => {
       },
     };
     console.log('resource url posted successfully');
-  });
+  })
 
   return router;
 }

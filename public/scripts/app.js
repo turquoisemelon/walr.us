@@ -1,22 +1,4 @@
 $(document).ready(function() {
-
-  $(() => {
-    $.ajax({
-      method: "POST",
-      url: `/user/${FB.getAuthResponse().userID}/register`
-    }).done((response) => {
-      //these are the two ways we can access the data being returned by the routes
-      //either as a single roll of data with many fields response[0].x
-      //or as an array of objects for (x of response){...}
-
-      console.log('should have worked');
-
-      // for(tag of response) {
-      //   $("<div>").text(tag.a).appendTo($("body"));
-      // }
-    });
-  });
-
 //initalizing FB javascript SDK
   window.fbAsyncInit = function() {
     FB.init({
@@ -30,6 +12,54 @@ $(document).ready(function() {
     FB.Event.subscribe('auth.statusChange', function(response) {
       FB.getLoginStatus(function(response) {
           if (response.status === 'connected') {
+
+              // $('.brand-logo').on('click', function () {
+              //   event.preventDefault();
+              //   $.ajax({
+              //     method: "POST",
+              //     url: `/user/resource/${FB.getAuthResponse().userID}/new`,
+              //     data: {
+              //       url : 'https://www.lighthouselabs.ca/',
+              //       title : "Canada's Leading Coding Bootcamp - Lighthouse Labs",
+              //       description : "Lighthouse Labs’ Coding Bootcamp will take you from programming hobbyist to professional Developer and will launch your new coding career.",
+              //       tags : ['programming', 'learning']
+              //     }
+              //   }).done((response) => {
+              //     //these are the two ways we can access the data being returned by the routes
+              //     //either as a single roll of data with many fields response[0].x
+              //     //or as an array of objects for (x of response){...}
+              //     console.log(response);
+              //     console.log('should have worked');
+
+              //     // for(tag of response) {
+              //     //   $("<div>").text(tag.a).appendTo($("body"));
+              //     // }
+              //   });
+
+              // });
+
+             $('.brand-logo').on('click', function () {
+                event.preventDefault();
+                $.ajax({
+                  method: "POST",
+                  url: "/resource/2/rating",
+                  data: {
+                    user_id : 1,
+                    rating : 0
+                  }
+                }).done((response) => {
+                  //these are the two ways we can access the data being returned by the routes
+                  //either as a single roll of data with many fields response[0].x
+                  //or as an array of objects for (x of response){...}
+                  console.log(response);
+                  console.log('should have worked');
+
+                  // for(tag of response) {
+                  //   $("<div>").text(tag.a).appendTo($("body"));
+                  // }
+                });
+
+              });
             console.log('something changed and now logged in');
           } else if (response.status === 'not_authorized') {
             console.log("something changed and now not_authorized");
