@@ -42,9 +42,9 @@ $(document).ready(function() {
                 event.preventDefault();
                 $.ajax({
                   method: "POST",
-                  url: "/resource/2/rating",
+                  url: "/resource/:resource_id/rating",
                   data: {
-                    user_id : 1,
+                    user_id : ${FB.getAuthResponse().userID,
                     rating : 0
                   }
                 }).done((response) => {
@@ -70,6 +70,32 @@ $(document).ready(function() {
     });
 
   };
+
+  function createPostElement(post) {
+  let $post =
+  <article>
+  <div class="col s4 asset">
+      <article class="post-container">
+          <header class="title">
+              <p class="name"> ${fb.user.name}</p> <!-- http:/graph.facebook.com/USERID/picture/ -->
+              <span class="tag"> ${post.tags} </span>
+          </header>
+          <section class="content">
+              <div class="image">
+                  <img class="responsive-img" src="http://i.ebayimg.com/images/g/IUUAAOSwv2JXwNU2/s-l500.jpg" alt="" />
+                  <h3 class="truncate"><span>Title of Resource:<span class='spacer'></span><br/><span class='spacer'></span>Description</span>
+                  </h3>
+              </div>
+          </section>
+
+          <span class="post-footer">
+  <div class="fb-comments" data-href="http://walr.us/1" data-width="320px" data-numposts="5"></div>
+          <span class="c-rating" id="counter0"></span>
+          <div class="fb-like" data-href="http://walr.us/1" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
+          </span>
+      </article>
+return $post;
+}
 
 
   // function addEntryToDb(userId) {
