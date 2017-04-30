@@ -20,8 +20,8 @@ $(document).ready(function() {
                   url: `/user/resource/3/new`,
                   // ${FB.getAuthResponse().userID}
                   data: {
-                    url : 'http://www.astonmartin.com/',
-                    title : "Watch Food Network Videos | Full Episodes Online - Anna Olson, Top Chef",
+                    url : 'https://500px.com/',
+                    title : "pixles pixles everywhere",
                     description : "Food Network Canada Videos, watch your favorite Food TV shows online; watch Top Chef, Bake with Anna Olson online for free and all Food Network Canada Shows Online.",
                     tags : ['news', 'responsive design']
                   }
