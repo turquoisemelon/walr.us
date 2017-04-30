@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
   <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="/styles/navbar.css" type="text/css" />
   <link rel="stylesheet" href="/styles/asset.css" type="text/css" />
@@ -21,15 +22,10 @@
   <nav>
     <div class="nav-wrapper">
       <a href="#!" class="brand-logo"><img src="/images/walrus8.png" alt="walrus"/></a>
-      <form>
-      <div class="fb-login-button btn" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="true"></div>
-        <div class="input-field">
-          <input id="search" type="search" required>
-          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-          <i class="material-icons">close</i>
-        </div>
-        <ul class="right hide-on-med-and-down"></ul>
-      </form>
+     <ul class="right hide-on-med-and-down">
+       <li><a class="waves-effect waves-light btn">Add Resource</a></li>
+       <li><a class="waves-effect waves-light btn"><div class="fb-login-button btn" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="true"></div></a></li>
+     </ul>
     </div>
     <!-- <img class="logo" src="/images/walrus.png">
     <span class="header">walr.us</span>
@@ -56,34 +52,51 @@
     <div class="row section assets-area">
       <article>
         <div class="col s4 asset">
-          <header class="title">
-              <p class="name"> corgi</p> <!-- http:/graph.facebook.com/USERID/picture/ -->
-              <span class="tag"> ${post.tags} </span>
-          </header>
-          <section class="content">
-              <div class="image">
-                  <img class="responsive-img" src="http://api.screenshotlayer.com/api/capture?access_key=65ddbd7e019c2d7a060686af2131a939&url=http://apple.com&viewport=1440x900&fullpage=1" alt="" />
-                  <h3 class="truncate"><span>Title of Resource:<span class='spacer'></span><br/><span class='spacer'></span>Description</span>
-                  </h3>
-              </div>
-          </section>
+          <div class="card medium">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="images/IzbVKV.jpg">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+              <p><a href="#">This is a link</a></p>
+              <span class="post-footer">
+                <div class="fb-comments" data-href="http://walr.us/1" data-width="320px" data-numposts="5"></div>
+                <span class="c-rating" id="counter0"></span>
+                <div class="fb-like" data-href="http://walr.us/1" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
+              </span>
+            </div>
 
-          <span class="post-footer">
-            <div class="fb-comments" data-href="http://walr.us/1" data-width="320px" data-numposts="5"></div>
-            <span class="c-rating" id="counter0"></span>
-            <div class="fb-like" data-href="http://walr.us/1" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
-          </span>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+              <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            </div>
+          </div>
         </div>
       </article>
       <article>
         <div class="col s4 asset">
+          <div class="card medium">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="images/kMqfmJ.jpg">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+              <p><a href="#">This is a link</a></p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+              <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="col s4 asset">
           <header class="title">
-              <p class="name"> ${fb.user.name}</p> <!-- http:/graph.facebook.com/USERID/picture/ -->
-              <span class="tag"> ${post.tags} </span>
+              <p class="name"> Meltem</p>
+              <span class="tag"> Programming </span>
           </header>
           <section class="content">
               <div class="image">
-                  <img class="responsive-img" src="images/corgi.jpg" alt="" />
+                  <img class="responsive-img" src="images/kMqfmJ.jpg" alt="" />
                   <h3 class="truncate"><span>Title of Resource:<span class='spacer'></span><br/><span class='spacer'></span>Description</span>
                   </h3>
               </div>
@@ -94,17 +107,33 @@
             <span class="c-rating" id="counter0"></span>
             <div class="fb-like" data-href="http://walr.us/1" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
           </span>
-        </div>
+        </div> -->
       </article>
       <article>
         <div class="col s4 asset">
+          <div class="card medium">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="images/ZTKprt.jpg">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+              <p><a href="#">This is a link</a></p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+              <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="col s4 asset">
           <header class="title">
-              <p class="name"> ${fb.user.name}</p> <!-- http:/graph.facebook.com/USERID/picture/ -->
-              <span class="tag"> ${post.tags} </span>
+              <p class="name"> Meltem</p>
+              <span class="tag"> Programming </span>
           </header>
           <section class="content">
               <div class="image">
-                  <img class="responsive-img" src="images/corgi.jpg" alt="" />
+                  <img class="responsive-img" src="images/ZTKprt.jpg" alt="" />
                   <h3 class="truncate"><span>Title of Resource:<span class='spacer'></span><br/><span class='spacer'></span>Description</span>
                   </h3>
               </div>
@@ -115,7 +144,7 @@
             <span class="c-rating" id="counter0"></span>
             <div class="fb-like" data-href="http://walr.us/1" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
           </span>
-        </div>
+        </div> -->
       </article>
     </div>
   </div>
