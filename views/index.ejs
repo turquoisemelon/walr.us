@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Meta Information -->
-    <title>Walr.us</title>
+  <!-- Meta Information -->
+  <title>Walr.us</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
-    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/navbar.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/asset.css" type="text/css" />
-    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-    <script type="text/javascript" src="/scripts/app.js"></script>
- </head>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/navbar.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/asset.css" type="text/css" />
+  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+  <script type="text/javascript" src="/scripts/app.js"></script>
+</head>
 
 <body>
   <nav>
@@ -28,9 +28,7 @@
           <label class="label-icon" for="search"><i class="material-icons">search</i></label>
           <i class="material-icons">close</i>
         </div>
-        <ul class="right hide-on-med-and-down">
-        </ul>
-
+        <ul class="right hide-on-med-and-down"></ul>
       </form>
     </div>
     <!-- <img class="logo" src="/images/walrus.png">
@@ -54,23 +52,71 @@
             <div><input class="submit" type="submit" value="post"></div>
         </form>
       </div>
-      <div class="col s3">
-
-      </div>
     </div>
     <div class="row section assets-area">
-      <div class="col s6 asset">
-        <img class="responsive-img" src="/images/corgi.jpg" alt="corgi" />
-        <p>
-          Corgi
-        </p>
-      </div>
-      <div class="col s6 asset">
-        <img class="responsive-img" src="/images/corgi.jpg" alt="corgi" />
-        <p>
-          Corgi
-        </p>
-      </div>
+      <article>
+        <div class="col s4 asset">
+          <header class="title">
+              <p class="name"> corgi</p> <!-- http:/graph.facebook.com/USERID/picture/ -->
+              <span class="tag"> ${post.tags} </span>
+          </header>
+          <section class="content">
+              <div class="image">
+                  <img class="responsive-img" src="http://api.screenshotlayer.com/api/capture?access_key=65ddbd7e019c2d7a060686af2131a939&url=http://apple.com&viewport=1440x900&fullpage=1" alt="" />
+                  <h3 class="truncate"><span>Title of Resource:<span class='spacer'></span><br/><span class='spacer'></span>Description</span>
+                  </h3>
+              </div>
+          </section>
+
+          <span class="post-footer">
+            <div class="fb-comments" data-href="http://walr.us/1" data-width="320px" data-numposts="5"></div>
+            <span class="c-rating" id="counter0"></span>
+            <div class="fb-like" data-href="http://walr.us/1" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
+          </span>
+        </div>
+      </article>
+      <article>
+        <div class="col s4 asset">
+          <header class="title">
+              <p class="name"> ${fb.user.name}</p> <!-- http:/graph.facebook.com/USERID/picture/ -->
+              <span class="tag"> ${post.tags} </span>
+          </header>
+          <section class="content">
+              <div class="image">
+                  <img class="responsive-img" src="images/corgi.jpg" alt="" />
+                  <h3 class="truncate"><span>Title of Resource:<span class='spacer'></span><br/><span class='spacer'></span>Description</span>
+                  </h3>
+              </div>
+          </section>
+
+          <span class="post-footer">
+            <div class="fb-comments" data-href="http://walr.us/1" data-width="320px" data-numposts="5"></div>
+            <span class="c-rating" id="counter0"></span>
+            <div class="fb-like" data-href="http://walr.us/1" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
+          </span>
+        </div>
+      </article>
+      <article>
+        <div class="col s4 asset">
+          <header class="title">
+              <p class="name"> ${fb.user.name}</p> <!-- http:/graph.facebook.com/USERID/picture/ -->
+              <span class="tag"> ${post.tags} </span>
+          </header>
+          <section class="content">
+              <div class="image">
+                  <img class="responsive-img" src="images/corgi.jpg" alt="" />
+                  <h3 class="truncate"><span>Title of Resource:<span class='spacer'></span><br/><span class='spacer'></span>Description</span>
+                  </h3>
+              </div>
+          </section>
+
+          <span class="post-footer">
+            <div class="fb-comments" data-href="http://walr.us/1" data-width="320px" data-numposts="5"></div>
+            <span class="c-rating" id="counter0"></span>
+            <div class="fb-like" data-href="http://walr.us/1" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
+          </span>
+        </div>
+      </article>
     </div>
   </div>
   <!-- Compiled and minified JavaScript -->
