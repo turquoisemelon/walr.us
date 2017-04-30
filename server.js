@@ -37,8 +37,8 @@ app.use("/styles", sass({
 app.use(express.static("public"));
 
 // Mount all routes
-app.use("/resource", resourceRoutes());
 app.use("/user", userRoutes());
+app.use("/resource", resourceRoutes());
 // Home page
 app.get("/", (req, res) => {
   res.render("index");
