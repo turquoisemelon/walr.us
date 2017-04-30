@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="/styles/asset.css" type="text/css" />
   <link rel="stylesheet" href="/styles/new-asset.css" type="text/css" />
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+  <script type="text/javascript" src="/scripts/animations.js"></script>
   <script type="text/javascript" src="/scripts/app.js"></script>
 </head>
 
@@ -24,7 +25,7 @@
     <div class="nav-wrapper">
       <a href="#!" class="brand-logo"><img src="/images/walrus8.png" alt="walrus"/></a>
      <ul class="right hide-on-med-and-down">
-       <li><a class="waves-effect waves-light btn">Add Resource</a></li>
+       <li><a class="waves-effect waves-light btn add-resource-button">Add Resource</a></li>
        <li><div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="true"></div></li>
      </ul>
     </div>
@@ -60,6 +61,9 @@
             <label for="textarea1">Description</label>
           </div>
         </div>
+        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+          <i class="material-icons right"></i>
+        </button>
       </form>
     </div>
       <!-- <div class="col s6 center-align">
