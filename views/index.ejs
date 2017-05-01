@@ -21,6 +21,9 @@
 </head>
 
 <body>
+
+
+
   <nav>
     <div class="nav-wrapper">
       <a href="#!" class="brand-logo"><img src="/images/walrus8.png" alt="walrus"/></a>
@@ -41,7 +44,7 @@
       <div class="col s4">
       </div>
     <div class="row">
-      <form class="col s6 postarea" method="POST" action="/new/">
+      <form class="col s6 postarea" method="POST" action="/resource/${FB.getAuthResponse().userID}/new">
         <div class="row">
           <div class="input-field col s6">
             <input id="input-url" type="text" name="url" data-length="50" required>
@@ -65,7 +68,6 @@
             <label for="textarea1">Tags</label>
             <div class="chips" name="tags"></div>
           </div>
-
         </div>
         <button class="btn waves-effect waves-light" type="submit" name="action">Submit
           <i class="material-icons right"></i>
@@ -83,86 +85,7 @@
         </form>
       </div> -->
     </div>
-    <div class="row section assets-area">
-      <article>
-        <div class="col s4 asset">
-          <div class="card medium">
-            <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="images/IzbVKV.jpg">
-            </div>
-            <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4">Free Code Camp<i class="material-icons right">more_vert</i></span>
-              <p><a href="#">www.freecodecamp.com</a></p>
-            </div>
-            <div class="card-action">
-              <div class="icons valign-wrapper">
-                <a href="#"><i class="small material-icons thumb_up">thumb_up</i></a>
-                <a href="#"><i class="small material-icons comment">comment</i></a>
-                <a href="#"><i class="small material-icons grade">grade</i></a>
-              </div>
-                <div class="chip">
-                  Tag
-                  <i class="close material-icons">close</i>
-                </div>
-            </div>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-              <p>Here is some more information about this product that is only revealed once clicked on.</p>
-            </div>
-          </div>
-          <div class="fb-comments-section">
-            <span class="post-footer">
-              <div class="fb-comments" data-href="http://walr.us/1" data-width="320px" data-numposts="5"></div>
-              <span class="c-rating" id="counter0"></span>
-              <div class="fb-like" data-href="http://walr.us/1" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
-            </span>
-          </div>
-        </div>
-      </article>
-      <article>
-        <div class="col s4 asset">
-          <div class="card medium">
-            <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="images/kXwvBc.jpg">
-            </div>
-            <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4">Code Academy<i class="material-icons right">more_vert</i></span>
-              <p><a href="#">www.codeacademy.com</a></p>
-            </div>
-            <div class="card-action">
-                <a href="#"><i class="small material-icons">thumb_up</i></a>
-                <a href="#"><i class="small material-icons">comment</i></a>
-                <a href="#"><i class="small material-icons">grade</i></a>
-            </div>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-              <p>Here is some more information about this product that is only revealed once clicked on.</p>
-            </div>
-          </div>
-        </div>
-      </article>
-      <article>
-        <div class="col s4 asset">
-          <div class="card medium">
-            <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="images/ZTKprt.jpg">
-            </div>
-            <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4">Pluralsight<i class="material-icons right">more_vert</i></span>
-              <p><a href="#">www.pluralsight.com</a></p>
-            </div>
-            <div class="card-action">
-                <a href="#"><i class="small material-icons">thumb_up</i></a>
-                <a href="#"><i class="small material-icons">comment</i></a>
-                <a href="#"><i class="small material-icons">grade</i></a>
-            </div>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-              <p>Here is some more information about this product that is only revealed once clicked on.</p>
-            </div>
-          </div>
-        </div>
-      </article>
+    <div class="row section assets-area" id="asset-area"">
     </div>
   </div>
   <!-- Compiled and minified JavaScript -->

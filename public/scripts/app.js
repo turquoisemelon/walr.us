@@ -1,3 +1,4 @@
+
   function createPostElement(post) {
     let $post =
       `<article>
@@ -35,7 +36,7 @@
   function renderPosts(posts) {
     var result = "";
     posts.forEach(function(post) {
-      console.log(post)
+      console.log(post.id)
       result = createPostElement(post) + result
     })
     // console.log(result)
@@ -54,7 +55,7 @@
   };
 
 $(document).ready(function() {
-
+loadPosts();
 //initalizing FB javascript SDK
   window.fbAsyncInit = function() {
     FB.init({
@@ -102,19 +103,17 @@ $(document).ready(function() {
                     description : description,
                     tags : tags()
                   }
-                }).done((response) => {
+                }).done((response) => { 
                   //these are the two ways we can access the data being returned by the routes
                   //either as a single roll of data with many fields response[0].x
                   //or as an array of objects for (x of response){...}
-                  console.log(response);
-                  console.log('should have worked');
-
+                  console.log("this is the response" + response);
                 });
 
               });
 
 
-              loadPosts();
+              
 
              // $('.brand-logo').on('click', function () {
              //    event.preventDefault();
