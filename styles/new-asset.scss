@@ -1,4 +1,19 @@
 .new-post {
+  background-color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  .submit-button {
+    margin-left: 35rem;
+    background-color: orange;
+  }
+  .submit-button:hover {
+    background-color: #2bbbad;
+  }
+  .row {
+    margin-left: -8rem;
+  }
   .input-field {
     label {
       color: #FFC107;
