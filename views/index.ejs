@@ -21,71 +21,58 @@
 </head>
 
 <body>
-
-
-
   <nav>
     <div class="nav-wrapper">
       <a href="#!" class="brand-logo"><img src="/images/walrus8.png" alt="walrus"/></a>
+      <span class="header">Walr.us</span>
+      <form>
+        <div class="input-field">
+          <input id="search" type="search" required>
+          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+          <i class="material-icons">close</i>
+        </div>
+      </form>
      <ul class="right hide-on-med-and-down">
        <li><a class="waves-effect waves-light btn add-resource-button">Add Resource</a></li>
        <li><div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="true"></div></li>
      </ul>
     </div>
-    <!-- <img class="logo" src="/images/walrus.png">
-    <span class="header">walr.us</span>
-    <input type="text" name="search" placeholder="Search..">
-    <button class="compose" type='button'><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Search
-    </button> -->
   </nav>
   <!-- Page-specific (main) <content></content> here -->
   <div class="container">
-    <div class="row new-post">
-      <div class="col s4">
-      </div>
-    <div class="row">
-      <form class="col s6 postarea" method="POST" action="/resource/${FB.getAuthResponse().userID}/new">
-        <div class="row">
-          <div class="input-field col s6">
-            <input id="input-url" type="text" name="url" data-length="50" required>
-            <label for="input_text">Resource Link</label>
-          </div>
+    <div class="new-post z-depth-4">
+      <div class="row">
+        <div class="col s3">
         </div>
-        <div class="row">
-          <div class="input-field col s6">
-            <input id="input-title" type="text" name="title" data-length="30" required>
-            <label for="input_text">Title</label>
+        <form class="col s9 postarea" method="POST" action="/resource/${FB.getAuthResponse().userID}/new">
+          <div class="row">
+            <div class="input-field col s4 center-align">
+              <input id="input-url" type="text" class="validate" name="url" data-length="50" required>
+              <label for="input_text">Resource Link</label>
+            </div>
+            <div class="input-field col s4 center-align">
+              <input id="input-title" type="text" class="validate" data-length="30" required>
+              <label for="input_text">Title</label>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s6">
-            <textarea id="input-description" class="materialize-textarea" name="description" data-length="120" required></textarea>
-            <label for="textarea1">Description</label>
+          <div class="row">
+            <div class="input-field col s4 center-align">
+              <input id="input-description" type="text" class="validate" name="url" data-length="120" required>
+              <label for="input_text">Description</label>
+            </div>
+            <div class="input-field col s4 center-align">
+              <label for="textarea1">Tags</label>
+              <div class="chips" name="tags"></div>
+              </div>
+            </div>
+            <button class="btn waves-effect waves-light right-align submit-button" type="submit" name="action">Submit
+            <i class="material-icons right"></i>
+            </button>
           </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s6">
-            <label for="textarea1">Tags</label>
-            <div class="chips" name="tags"></div>
-          </div>
-        </div>
-        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-          <i class="material-icons right"></i>
-        </button>
-      </form>
-    </div>
-      <!-- <div class="col s6 center-align">
-        <h3 class="headline">Submit Resource</h3>
-        <form class="postarea" method="POST" action="/posts/">
-            <textarea class="postbox" name="text" placeholder="Learning Resource"></textarea><br>
-            <div> Title: <input class="title" type="text" name="Title"></div>
-            <div> Description: <input class="description" type="text" name="Description"><br></div>
-            <div> Tags: <input class="tags" type="text" name="tags"><br></div>
-            <div><input class="submit" type="submit" value="post"></div>
         </form>
-      </div> -->
     </div>
-    <div class="row section assets-area" id="asset-area"">
+    <div class="row section assets-area" id="asset-area">
+
     </div>
   </div>
   <!-- Compiled and minified JavaScript -->
