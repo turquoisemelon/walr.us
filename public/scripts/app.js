@@ -42,8 +42,12 @@ $(document).ready(function() {
             });
 
 
-            $('.brand-logo').on('click', function () {
+            $('.postarea').on('submit', function () {
                 event.preventDefault();
+                const url = $('.input-url').val();
+                const title = $('.input-title').val();
+                const description = $('.input-description').val();
+                const tags = $('.chips').val();
                 $.ajax({
                   method: "POST",
                   url: `/resource/${FB.getAuthResponse().userID}/new`,
