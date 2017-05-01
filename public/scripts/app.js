@@ -1,21 +1,21 @@
 $(document).ready(function() {
 
-  $(() => {
-    $.ajax({
-      method: "POST",
-      url: `/user/${FB.getAuthResponse().userID}/register`
-    }).done((response) => {
-      //these are the two ways we can access the data being returned by the routes
-      //either as a single roll of data with many fields response[0].x
-      //or as an array of objects for (x of response){...}
+  // $(() => {
+  //   $.ajax({
+  //     method: "POST",
+  //     url: `/user/${FB.getAuthResponse().userID}/register`
+  //   }).done((response) => {
+  //     //these are the two ways we can access the data being returned by the routes
+  //     //either as a single roll of data with many fields response[0].x
+  //     //or as an array of objects for (x of response){...}
 
-      console.log('should have worked');
+  //     console.log('should have worked');
 
-      // for(tag of response) {
-      //   $("<div>").text(tag.a).appendTo($("body"));
-      // }
-    });
-  });
+  //     // for(tag of response) {
+  //     //   $("<div>").text(tag.a).appendTo($("body"));
+  //     // }
+  //   });
+  // });
 
 //initalizing FB javascript SDK
   window.fbAsyncInit = function() {
@@ -31,6 +31,58 @@ $(document).ready(function() {
       FB.getLoginStatus(function(response) {
           if (response.status === 'connected') {
             console.log('something changed and now logged in');
+            //handling user logging in & saving them to DB if needed
+            $(() => {
+              $.ajax({
+                method: "POST",
+                url: `/user/${FB.getAuthResponse().userID}/register`
+              }).done((response) => {
+                console.log('saved new user');
+              });
+            });
+
+
+            $('.brand-logo').on('click', function () {
+                event.preventDefault();
+                $.ajax({
+                  method: "POST",
+                  url: `/resource/${FB.getAuthResponse().userID}/new`,
+                  data: {
+                    url : 'http://www.astonmartin.com/',
+                    title : "Watch Food Network Videos | Full Episodes Online - Anna Olson, Top Chef",
+                    description : "Food Network Canada Videos, watch your favorite Food TV shows online; watch Top Chef, Bake with Anna Olson online for free and all Food Network Canada Shows Online.",
+                    tags : ['news', 'responsive design']
+                  }
+                }).done((response) => {
+                  //these are the two ways we can access the data being returned by the routes
+                  //either as a single roll of data with many fields response[0].x
+                  //or as an array of objects for (x of response){...}
+                  console.log(response);
+                  console.log('should have worked');
+
+                  // for(tag of response) {
+                  //   $("<div>").text(tag.a).appendTo($("body"));
+                  // }
+                });
+
+              });
+
+             // $('.brand-logo').on('click', function () {
+             //    event.preventDefault();
+             //    $.ajax({
+             //      method: "POST",
+             //      url: "/resource/2/rating",
+             //      data: {
+             //        user_id : 1,
+             //        rating : 0
+             //      }
+             //    }).done((response) => {
+             //      //these are the two ways we can access the data being returned by the routes
+             //      //either as a single roll of data with many fields response[0].x
+             //      //or as an array of objects for (x of response){...}
+             //      console.log(response);
+             //      console.log('should have worked');
+
           } else if (response.status === 'not_authorized') {
             console.log("something changed and now not_authorized");
           } else {
@@ -89,53 +141,6 @@ $(document).ready(function() {
 // return $post;
 // };
 
-// function renderPost(posts) {
-//     var result = "";
-//     posts.forEach(function(post) {
-//       result = createPostsElement(post) + result
-//     })
-//     $('.post-area').html(result)
-//   };
-
-//   function loadPosts() {
-//     $.ajax({
-//       url: 'http://localhost:8080/post',
-//       method: 'GET',
-//       data: {
-//         format: 'json'
-//       },
-//       success: function(data) {
-//         renderPosts(data);
-//       }
-//     })
-//   };
-//   loadPosts();
-
-//   $("#postarea").on("submit", function(event) {
-//     event.preventDefault();
-//     if ($("textarea").val() == "" || null) {
-//       alert('Say Something')
-//     }
-//     if ($("textarea").val().length > 140) {
-//       alert('Stahp')
-//     } else {
-//       $.ajax({
-//         method: 'POST',
-//         url: '/posts',
-//         data: $('textarea').serialize(),
-//         success: function() {
-//           $('textarea').val('');
-//           $('span.counter').html('140');
-//           loadPosts();
-//         }
-//       });
-//     }
-//   });
-// };
-
-
-
-// }
 
 
 })
