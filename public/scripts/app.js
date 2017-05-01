@@ -44,18 +44,24 @@ $(document).ready(function() {
 
             $('.postarea').on('submit', function () {
                 event.preventDefault();
-                const url = $('.input-url').val();
-                const title = $('.input-title').val();
-                const description = $('.input-description').val();
-                const tags = $('.chips').val();
+                const url = $('#input-url').val();
+                const title = $('#input-title').val();
+                const description = $('#input-description').val();
+                const tags = function(){
+                  let arr = [];
+                  for(let i = 0; i < $('.chip').length; i++){
+                    arr.push($('.chip')[i].textContent.replace('close', ''))
+                  }
+                  return arr;
+                }
                 $.ajax({
                   method: "POST",
                   url: `/resource/${FB.getAuthResponse().userID}/new`,
                   data: {
-                    url : 'http://www.astonmartin.com/',
-                    title : "Watch Food Network Videos | Full Episodes Online - Anna Olson, Top Chef",
-                    description : "Food Network Canada Videos, watch your favorite Food TV shows online; watch Top Chef, Bake with Anna Olson online for free and all Food Network Canada Shows Online.",
-                    tags : ['news', 'responsive design']
+                    url : url,
+                    title : title,
+                    description : description,
+                    tags : tags()
                   }
                 }).done((response) => {
                   //these are the two ways we can access the data being returned by the routes
@@ -64,12 +70,66 @@ $(document).ready(function() {
                   console.log(response);
                   console.log('should have worked');
 
-                  // for(tag of response) {
-                  //   $("<div>").text(tag.a).appendTo($("body"));
-                  // }
                 });
 
               });
+
+
+  function createPostElement(post) {
+    let $post =
+      `<article>
+        <div class="col s4 asset">
+          <div class="card medium">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="${post.img_path}">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">${post.title}<i class="material-icons right">more_vert</i></span>
+              <p><a href="#">${post.url}</a></p>
+            </div>
+            <div class="card-action">
+                <a href="#"><i class="small material-icons">thumb_up</i></a>
+                <a href="#"><i class="small material-icons">comment</i></a>
+                <a href="#"><i class="small material-icons">grade</i></a>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">${post.title}<i class="material-icons right">close</i></span>
+              <p>${post.description}</p>
+            </div>
+          </div>
+          <div class="fb-comments-section">
+            <span class="post-footer">
+              <div class="fb-comments" data-href="http://walr.us/${post.id}" data-width="320px" data-numposts="5"></div>
+              <span class="c-rating" id="counter${post.id}"></span>
+              <div class="fb-like" data-href="http://walr.us/${post.id}" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
+            </span>
+          </div>
+        </div>
+      </article>`
+    return $post;
+  }
+
+  function renderPosts(posts) {
+    var result = "";
+    posts.forEach(function(post) {
+      console.log(post)
+      result = createPostElement(post) + result
+    })
+    // console.log(result)
+    $('#asset-area').html(result)
+  };
+
+ function loadPosts() {
+    $.ajax({
+      url: '/resource',
+      method: 'GET',
+      data: {
+        format: 'json'
+      },
+      success: function(data){renderPosts(data)}
+    })
+  };
+  loadPosts();
 
              // $('.brand-logo').on('click', function () {
              //    event.preventDefault();
