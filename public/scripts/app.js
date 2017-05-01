@@ -67,10 +67,11 @@ loadPosts();
     FB.getLoginStatus();
 
     FB.Event.subscribe('auth.statusChange', function(response) {
+      console.log('FB login status changed')
       FB.getLoginStatus(function(response) {
           if (response.status === 'connected') {
-            console.log('something changed and now logged in');
-
+            console.log('now logged in');
+            $(".btn").show();
             //handling user logging in & saving them to DB if needed
             $(() => {
               $.ajax({
@@ -107,9 +108,10 @@ loadPosts();
                   //these are the two ways we can access the data being returned by the routes
                   //either as a single roll of data with many fields response[0].x
                   //or as an array of objects for (x of response){...}
-                  console.log("this is the response" + response);
-                });
+                  console.log(response);
+                  console.log('should have worked');
 
+                });
               });
 
 
@@ -133,7 +135,9 @@ loadPosts();
 
           } else if (response.status === 'not_authorized') {
             console.log("something changed and now not_authorized");
+            $(".btn").hide();
           } else {
+            $(".btn").hide();
             console.log('something changed and now not connected');
           }
       });

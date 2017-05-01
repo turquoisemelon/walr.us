@@ -2,6 +2,13 @@ $(document).ready(function() {
   $(".new-post").hide();
   $(".add-resource-button").click(function(){
     $(".new-post").slideToggle("fast", function (){});
+    const $this = $(this);
+    $this.toggleClass('add-resource-button');
+    if($this.hasClass('add-resource-button')){
+      $this.text('ADD RESOURCE');
+    } else{
+      $this.text('CANCEL');
+    }
   });
 
 
