@@ -68,7 +68,7 @@ module.exports = () => {
   
   router.get('/', (req,res) =>{
     db.getRatedResources()
-      .then((results) => {console.log(results.rows)})
+      .then((results) => {res.json(results.rows)})
       .catch((err) =>{console.log(err)});
     });
 
