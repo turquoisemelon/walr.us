@@ -20,8 +20,8 @@ module.exports = () => {
     const title = req.body.title;
     const description = req.body.description;
     const tags = req.body.tags;
-    const viewport = '&viewport=1440x900';
-    const fullpage = '&fullpage=1';
+    const viewport = '&viewport=1024x768';
+    const fullpage = '';
     let img_path;
     let existingTags = [];
     let newTags = [];
@@ -55,7 +55,6 @@ module.exports = () => {
         })
         .then(()=>{
           //creating new resource_tag relationships based on resoruce_id & tag_id
-          console.log(newResource_id);
           tags.forEach((tag) => {
             db.getTagID(tag).then((results) => {
               db.setTag(newResource_id, results[0].id)
