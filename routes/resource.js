@@ -55,6 +55,7 @@ module.exports = () => {
         })
         .then(()=>{
           //creating new resource_tag relationships based on resoruce_id & tag_id
+          console.log(newResource_id);
           tags.forEach((tag) => {
             db.getTagID(tag).then((results) => {
               db.setTag(newResource_id, results[0].id)
@@ -65,7 +66,7 @@ module.exports = () => {
       })
     })
   });
-  
+
   router.get('/', (req,res) =>{
     db.getRatedResources()
       .then((results) => {console.log(results.rows)})

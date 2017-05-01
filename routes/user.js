@@ -2,7 +2,6 @@
 
 const express = require('express');
 const router  = express.Router();
-const bodyParser = require('body-parser')
 const db = require('../lib/util/data-helpers.js');
 const getScreenShot = require('../lib/util/getscreenshot');
 
