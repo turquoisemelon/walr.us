@@ -103,6 +103,7 @@ loadPosts();
 
              //listening to submit form for new resource
             $('.postarea').on('submit', function () {
+                $(".progress").toggleClass('show');
                 event.preventDefault();
                 const url = $('#input-url').val();
                 const title = $('#input-title').val();
@@ -126,10 +127,11 @@ loadPosts();
                 }).done((response) => {
                 });
                 setTimeout(function(){
+                  $(".progress").toggleClass('show');
                   $(".btn").text('ADD RESOURCE');
                   $(".new-post").hide();
-                  loadPosts();
-                } ,6000)
+                  window.location.href = 'http://localhost:8080/';
+                } ,4000)
 
               });
 
