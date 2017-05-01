@@ -33,11 +33,30 @@
     return $post;
   }
 
+function renderSingle(post){
+var result = "";
+result = createPostElement(post) 
+    console.log(result)
+    $('#asset-area').prepend(result)
+  };
+
+ function loadSingle() {
+    $.ajax({
+      url: '/resource',
+      method: 'GET',
+      data: {
+        format: 'json'
+      },
+      success: function(data){console.log(data[(data.length) -1])},// Where Resource_id = this
+      // complete: function(){}  
+    })
+  };
+
   function renderPosts(posts) {
     var result = "";
     posts.forEach(function(post) {
-      console.log(post.id)
       result = createPostElement(post) + result
+      // result.sort()
     })
     // console.log(result)
     $('#asset-area').html(result)
@@ -81,6 +100,65 @@ loadPosts();
                 console.log('saved new user');
               });
             });
+var el = document.querySelector('#counter1');
+var currentRating = 3;
+var maxRating= 5;
+var callback = function(rating) { alert(rating); };
+var myRating = rating(el, currentRating, maxRating, callback);
+
+var el = document.querySelector('#counter2');
+var currentRating = 2;
+var maxRating= 5;
+var callback = function(rating) { alert(rating); };
+var myRating = rating(el, currentRating, maxRating, callback);
+
+var el = document.querySelector('#counter3');
+var currentRating = 4;
+var maxRating= 5;
+var callback = function(rating) { alert(rating); };
+var myRating = rating(el, currentRating, maxRating, callback);
+
+var el = document.querySelector('#counter4');
+var currentRating = 4;
+var maxRating= 5;
+var callback = function(rating) { alert(rating); };
+var myRating = rating(el, currentRating, maxRating, callback);
+var el = document.querySelector('#counter5');
+var currentRating = 4;
+var maxRating= 5;
+var callback = function(rating) { alert(rating); };
+var myRating = rating(el, currentRating, maxRating, callback);
+var el = document.querySelector('#counter6');
+var currentRating = 4;
+var maxRating= 5;
+var callback = function(rating) { alert(rating); };
+var myRating = rating(el, currentRating, maxRating, callback);
+var el = document.querySelector('#counter7');
+var currentRating = 4;
+var maxRating= 5;
+var callback = function(rating) { alert(rating); };
+var myRating = rating(el, currentRating, maxRating, callback);
+var el = document.querySelector('#counter8');
+var currentRating = 4;
+var maxRating= 5;
+var callback = function(rating) { alert(rating); };
+var myRating = rating(el, currentRating, maxRating, callback);
+var el = document.querySelector('#counter9');
+var currentRating = 4;
+var maxRating= 5;
+var callback = function(rating) { alert(rating); };
+var myRating = rating(el, currentRating, maxRating, callback);
+var el = document.querySelector('#counter10');
+var currentRating = 4;
+var maxRating= 5;
+var callback = function(rating) { alert(rating); };
+var myRating = rating(el, currentRating, maxRating, callback);
+var el = document.querySelector('#counter11');
+var currentRating = 4;
+var maxRating= 5;
+var callback = function(rating) { alert(rating); };
+var myRating = rating(el, currentRating, maxRating, callback);
+
 
             //listening to submit form for new resource
             $('.postarea').on('submit', function () {
@@ -102,15 +180,23 @@ loadPosts();
                     url : url,
                     title : title,
                     description : description,
-                    tags : tags()
+                    tags : tags(),
+                  success: function() { console.log('hiya')
+                $('#input-url').val('');  
+                $('#input-title').val('');
+                $('#input-description').val('');
+                $('.chips').val('');
+                loadSingle();
+          // loadPosts();
+        }
                   }
                 }).done((response) => {
                   //these are the two ways we can access the data being returned by the routes
                   //either as a single roll of data with many fields response[0].x
                   //or as an array of objects for (x of response){...}
-                  console.log(response);
+                  // console.log(response);
                   console.log('should have worked');
-
+                  // loadPosts();
                 });
               });
 
