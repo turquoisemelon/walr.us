@@ -7,11 +7,11 @@
             <div class="card-image waves-effect waves-block waves-light">
               <img class="activator" src="${post.img_path}">
             </div>
-            <div class="card-content">g
+            <div class="card-content">
               <span class="card-title activator grey-text text-darken-4">${post.title}<i class="material-icons right">more_vert</i></span>
               <p><a href="#">${post.url}</a></p>
             </div>
-            <div class="card-action">it 
+            <div class="card-action"> 
                 <a href="#"><i class="small material-icons">thumb_up</i></a>
                 <a href="#"><i class="small material-icons">comment</i></a>
                 <a href="#"><i class="small material-icons">grade</i></a>
@@ -104,7 +104,7 @@ loadPosts();
                     description : description,
                     tags : tags()
                   }
-                }).done((response) => { 
+                }).done((response) => {
                   //these are the two ways we can access the data being returned by the routes
                   //either as a single roll of data with many fields response[0].x
                   //or as an array of objects for (x of response){...}
@@ -115,7 +115,7 @@ loadPosts();
               });
 
 
-              
+
 
              // $('.brand-logo').on('click', function () {
              //    event.preventDefault();
