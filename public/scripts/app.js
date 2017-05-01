@@ -101,67 +101,6 @@ loadPosts();
               });
             });
 
-
-          var el = document.querySelector('#counter1');
-          var currentRating = 3;
-          var maxRating= 5;
-          var callback = function(rating) { alert(rating); };
-          var myRating = rating(el, currentRating, maxRating, callback);
-
-          var el = document.querySelector('#counter2');
-          var currentRating = 2;
-          var maxRating= 5;
-          var callback = function(rating) { alert(rating); };
-          var myRating = rating(el, currentRating, maxRating, callback);
-
-          var el = document.querySelector('#counter3');
-          var currentRating = 4;
-          var maxRating= 5;
-          var callback = function(rating) { alert(rating); };
-          var myRating = rating(el, currentRating, maxRating, callback);
-
-          var el = document.querySelector('#counter4');
-          var currentRating = 4;
-          var maxRating= 5;
-          var callback = function(rating) { alert(rating); };
-          var myRating = rating(el, currentRating, maxRating, callback);
-          var el = document.querySelector('#counter5');
-          var currentRating = 4;
-          var maxRating= 5;
-          var callback = function(rating) { alert(rating); };
-          var myRating = rating(el, currentRating, maxRating, callback);
-          var el = document.querySelector('#counter6');
-          var currentRating = 4;
-          var maxRating= 5;
-          var callback = function(rating) { alert(rating); };
-          var myRating = rating(el, currentRating, maxRating, callback);
-          var el = document.querySelector('#counter7');
-          var currentRating = 4;
-          var maxRating= 5;
-          var callback = function(rating) { alert(rating); };
-          var myRating = rating(el, currentRating, maxRating, callback);
-          var el = document.querySelector('#counter8');
-          var currentRating = 4;
-          var maxRating= 5;
-          var callback = function(rating) { alert(rating); };
-          var myRating = rating(el, currentRating, maxRating, callback);
-          var el = document.querySelector('#counter9');
-          var currentRating = 4;
-          var maxRating= 5;
-          var callback = function(rating) { alert(rating); };
-          var myRating = rating(el, currentRating, maxRating, callback);
-          var el = document.querySelector('#counter10');
-          var currentRating = 4;
-          var maxRating= 5;
-          var callback = function(rating) { alert(rating); };
-          var myRating = rating(el, currentRating, maxRating, callback);
-          var el = document.querySelector('#counter11');
-          var currentRating = 4;
-          var maxRating= 5;
-          var callback = function(rating) { alert(rating); };
-          var myRating = rating(el, currentRating, maxRating, callback);
-
-
              //listening to submit form for new resource
             $('.postarea').on('submit', function () {
                 event.preventDefault();
@@ -188,13 +127,8 @@ loadPosts();
                   //these are the two ways we can access the data being returned by the routes
                   //either as a single roll of data with many fields response[0].x
                   //or as an array of objects for (x of response){...}
-                  console.log(response);
-                  console.log('should have worked');
                 });
               });
-
-
-
 
              // $('.brand-logo').on('click', function () {
              //    event.preventDefault();
@@ -215,125 +149,10 @@ loadPosts();
           } else if (response.status === 'not_authorized') {
             console.log("something changed and now not_authorized");
             $(".btn").hide();
-            var el = document.querySelector('#counter1');
-          var currentRating = 3;
-          var maxRating= 5;
-          var callback = function(rating) { alert(rating); };
-          var myRating = rating(el, currentRating, maxRating, callback);
 
-          var el = document.querySelector('#counter2');
-          var currentRating = 2;
-          var maxRating= 5;
-          var callback = function(rating) { alert(rating); };
-          var myRating = rating(el, currentRating, maxRating, callback);
-
-          var el = document.querySelector('#counter3');
-          var currentRating = 4;
-          var maxRating= 5;
-          var callback = function(rating) { alert(rating); };
-          var myRating = rating(el, currentRating, maxRating, callback);
-
-          var el = document.querySelector('#counter4');
-          var currentRating = 4;
-          var maxRating= 5;
-          var callback = function(rating) { alert(rating); };
-          var myRating = rating(el, currentRating, maxRating, callback);
-          var el = document.querySelector('#counter5');
-          var currentRating = 4;
-          var maxRating= 5;
-          var callback = function(rating) { alert(rating); };
-          var myRating = rating(el, currentRating, maxRating, callback);
-          var el = document.querySelector('#counter6');
-          var currentRating = 4;
-          var maxRating= 5;
-          var callback = function(rating) { alert(rating); };
-          var myRating = rating(el, currentRating, maxRating, callback);
-          var el = document.querySelector('#counter7');
-          var currentRating = 4;
-          var maxRating= 5;
-          var callback = function(rating) { alert(rating); };
-          var myRating = rating(el, currentRating, maxRating, callback);
-          var el = document.querySelector('#counter8');
-          var currentRating = 4;
-          var maxRating= 5;
-          var callback = function(rating) { alert(rating); };
-          var myRating = rating(el, currentRating, maxRating, callback);
-          var el = document.querySelector('#counter9');
-          var currentRating = 4;
-          var maxRating= 5;
-          var callback = function(rating) { alert(rating); };
-          var myRating = rating(el, currentRating, maxRating, callback);
-          var el = document.querySelector('#counter10');
-          var currentRating = 4;
-          var maxRating= 5;
-          var callback = function(rating) { alert(rating); };
-          var myRating = rating(el, currentRating, maxRating, callback);
-          var el = document.querySelector('#counter11');
-          var currentRating = 4;
-          var maxRating= 5;
-          var callback = function(rating) { alert(rating); };
-          var myRating = rating(el, currentRating, maxRating, callback);
           } else {
             $(".btn").hide();
             console.log('something changed and now not connected');
-            var el = document.querySelector('#counter1');
-          var currentRating = 3;
-          var maxRating= 5;
-          var callback = function(rating) { alert(rating); };
-          var myRating = rating(el, currentRating, maxRating, callback);
-
-          var el = document.querySelector('#counter2');
-          var currentRating = 2;
-          var maxRating= 5;
-          var callback = function(rating) { alert(rating); };
-          var myRating = rating(el, currentRating, maxRating, callback);
-
-          var el = document.querySelector('#counter3');
-          var currentRating = 4;
-          var maxRating= 5;
-          var callback = function(rating) { alert(rating); };
-          var myRating = rating(el, currentRating, maxRating, callback);
-
-          var el = document.querySelector('#counter4');
-          var currentRating = 4;
-          var maxRating= 5;
-          var callback = function(rating) { alert(rating); };
-          var myRating = rating(el, currentRating, maxRating, callback);
-          var el = document.querySelector('#counter5');
-          var currentRating = 4;
-          var maxRating= 5;
-          var callback = function(rating) { alert(rating); };
-          var myRating = rating(el, currentRating, maxRating, callback);
-          var el = document.querySelector('#counter6');
-          var currentRating = 4;
-          var maxRating= 5;
-          var callback = function(rating) { alert(rating); };
-          var myRating = rating(el, currentRating, maxRating, callback);
-          var el = document.querySelector('#counter7');
-          var currentRating = 4;
-          var maxRating= 5;
-          var callback = function(rating) { alert(rating); };
-          var myRating = rating(el, currentRating, maxRating, callback);
-          var el = document.querySelector('#counter8');
-          var currentRating = 4;
-          var maxRating= 5;
-          var callback = function(rating) { alert(rating); };
-          var myRating = rating(el, currentRating, maxRating, callback);
-          var el = document.querySelector('#counter9');
-          var currentRating = 4;
-          var maxRating= 5;
-          var callback = function(rating) { alert(rating); };
-          var myRating = rating(el, currentRating, maxRating, callback);
-          var el = document.querySelector('#counter10');
-          var currentRating = 4;
-          var maxRating= 5;
-          var callback = function(rating) { alert(rating); };
-          var myRating = rating(el, currentRating, maxRating, callback);
-          var el = document.querySelector('#counter11');
-          var currentRating = 4;
-          var maxRating= 5;
-          var callback = function(rating) { alert(rating); };
-          var myRating = rating(el, currentRating, maxRating, callback);
           }
       });
     });
