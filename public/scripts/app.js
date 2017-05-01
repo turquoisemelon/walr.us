@@ -124,10 +124,13 @@ loadPosts();
                     tags : tags()
                   }
                 }).done((response) => {
-                  //these are the two ways we can access the data being returned by the routes
-                  //either as a single roll of data with many fields response[0].x
-                  //or as an array of objects for (x of response){...}
                 });
+                setTimeout(function(){
+                  $(".btn").text('ADD RESOURCE');
+                  $(".new-post").hide();
+                  loadPosts();
+                } ,6000)
+
               });
 
              // $('.brand-logo').on('click', function () {

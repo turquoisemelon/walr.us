@@ -58,12 +58,14 @@ module.exports = () => {
           tags.forEach((tag) => {
             db.getTagID(tag).then((results) => {
               db.setTag(newResource_id, results[0].id)
-              .then((results)=>{});
+              .then((results)=>{
+              });
             });
           })
         });
       })
     })
+
   });
 
   router.get('/', (req,res) =>{
