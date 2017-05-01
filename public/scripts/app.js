@@ -7,11 +7,11 @@
             <div class="card-image waves-effect waves-block waves-light">
               <img class="activator" src="${post.img_path}">
             </div>
-            <div class="card-content">
+            <div class="card-content">g
               <span class="card-title activator grey-text text-darken-4">${post.title}<i class="material-icons right">more_vert</i></span>
               <p><a href="#">${post.url}</a></p>
             </div>
-            <div class="card-action">
+            <div class="card-action">it 
                 <a href="#"><i class="small material-icons">thumb_up</i></a>
                 <a href="#"><i class="small material-icons">comment</i></a>
                 <a href="#"><i class="small material-icons">grade</i></a>
